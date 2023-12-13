@@ -8,6 +8,5 @@ project(":wgpuj-natives").projectDir = file("wgpuj")
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        jcenter()
     }
 }
