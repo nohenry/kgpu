@@ -4,7 +4,6 @@ plugins {
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 group = rootProject.extra["projectGroup"]!!
@@ -39,7 +38,7 @@ kotlin {
 
                 implementation(project(":modules:kgpu"))
                 implementation(project(":modules:kcgmath"))
-                implementation("com.soywiz.korlibs.korim:korim:$korlibVersion")
+//                implementation("com.soywiz.korlibs.korim:korim:$korlibVersion")
             }
         }
         val jvmMain by getting {

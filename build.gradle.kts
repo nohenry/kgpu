@@ -1,13 +1,13 @@
 plugins {
-    kotlin("multiplatform") version "1.5.0-RC"
+    kotlin("multiplatform") version "1.9.21"
     id("org.jetbrains.dokka") version "1.4.0-rc"
     id("maven-publish")
     id("com.diffplug.spotless") version "5.8.2"
+    `maven-publish`
 }
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 kotlin {

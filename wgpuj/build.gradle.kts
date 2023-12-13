@@ -3,7 +3,7 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
 plugins {
     id("java-library")
-    id("de.undercouch.download")
+    id("de.undercouch.download") version "4.0.2"
     id("maven-publish")
     id("com.diffplug.spotless")
 }
@@ -50,6 +50,7 @@ tasks.test {
             // native code
             when (result.resultType) {
                 TestResult.ResultType.SKIPPED -> throw RuntimeException("Tests cannot be skipped!")
+                else -> {}
             }
         }
         override fun afterSuite(suite: TestDescriptor, result: TestResult) {
@@ -106,6 +107,8 @@ tasks {
         dependsOn("installWgpuNative")
     }
 }
+tasks.named("processResources").configure { dependsOn("installWgpuNative") }
+tasks.named("sourcesJar").configure { dependsOn("installWgpuNative") }
 
 publishing {
     repositories {
